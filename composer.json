@@ -1,9 +1,13 @@
 {
-  "name": "torann/laravel-meta-tags",
+  "name": "victord11/laravel-meta-tags",
   "keywords": ["meta tags", "meta", "tags", "head", "laravel"],
-  "description": "A package to manage Header Meta Tags",
+  "description": "A package to manage Header Meta Tags for SS",
   "license": "MIT",
   "authors": [
+    {
+      "name": "VictoRD11",
+      "email": "victord11@ukr.net"
+    },
     {
       "name": "Lito",
       "email": "lito@eordes.com"
@@ -14,7 +18,7 @@
     }
   ],
   "require": {
-    "php": ">=5.5.9",
+    "php": ">=7.0",
     "illuminate/support": "~5.1"
   },
   "require-dev": {
@@ -23,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Torann\\LaravelMetaTags\\": "src/Torann/LaravelMetaTags/"
+      "VictoRD11\\LaravelMetaTags\\": "src/VictoRD11/LaravelMetaTags/"
     }
   }
 }

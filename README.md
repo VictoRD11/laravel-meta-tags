@@ -1,20 +1,18 @@
 # Laravel Meta Tags
 
-[![Latest Stable Version](https://poser.pugx.org/torann/laravel-meta-tags/v/stable.png)](https://packagist.org/packages/torann/laravel-meta-tags) [![Total Downloads](https://poser.pugx.org/torann/laravel-meta-tags/downloads.png)](https://packagist.org/packages/torann/laravel-meta-tags)
-
 With this package you can manage header Meta Tags from Laravel controllers.
 
 ----------
 
 ## Installation
 
-- [Laravel MetaTags on Packagist](https://packagist.org/packages/torann/laravel-meta-tags)
-- [Laravel MetaTags on GitHub](https://github.com/Torann/laravel-meta-tags)
+- [Laravel MetaTags on Packagist](https://packagist.org/packages/victord11/laravel-meta-tags)
+- [Laravel MetaTags on GitHub](https://github.com/VictoRD11/laravel-meta-tags)
 
 From the command line run
 
 ```
-$ composer require torann/laravel-meta-tags
+$ composer require victord11/laravel-meta-tags
 ```
 
 Once Meta Tags is installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
@@ -22,7 +20,7 @@ Once Meta Tags is installed you need to register the service provider with the a
 ```php
 'providers' => array(
 
-    Torann\LaravelMetaTags\MetaTagsServiceProvider::class,
+    VictoRD11\LaravelMetaTags\MetaTagsServiceProvider::class,
 
 )
 ```
@@ -32,7 +30,7 @@ Meta Tags also ships with a facade which provides the static syntax for creating
 ```php
 'aliases' => array(
 
-    'MetaTag'   => Torann\LaravelMetaTags\Facades\MetaTag::class,
+    'MetaTag'   => VictoRD11\LaravelMetaTags\Facades\MetaTag::class,
 
 )
 ```
@@ -42,7 +40,7 @@ Meta Tags also ships with a facade which provides the static syntax for creating
 Run this on the command line from the root of your project:
 
 ```
-$ php artisan vendor:publish --provider="Torann\LaravelMetaTags\MetaTagsServiceProvider"
+$ php artisan vendor:publish --provider="VictoRD11\LaravelMetaTags\MetaTagsServiceProvider"
 ```
 
 A configuration file will be publish to `config/meta-tags.php`.

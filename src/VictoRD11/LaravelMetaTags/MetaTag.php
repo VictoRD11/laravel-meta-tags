@@ -126,9 +126,15 @@ class MetaTag
      */
     public function tag($key, $value = '')
     {
+        $content = $value ?: Arr::get($this->metas, $key, '');
+
+        if (!$content) {
+            return '';
+        }
+
         return $this->createTag([
             'name' => $key,
-            'content' => $value ?: Arr::get($this->metas, $key, ''),
+            'content' => $content,
         ]);
     }
 
@@ -139,10 +145,14 @@ class MetaTag
      */
     public function canonical()
     {
+        if (!$this->get('canonical')) {
+            return '';
+        }
+
         $html = $this->createTag([
             'rel' => 'canonical',
-            'href' => $this->request->url()
-        ]);
+            'href' => $this->get('canonical')
+        ], 'link');
 
         foreach ($this->config['locales'] as $value)
         {
@@ -154,7 +164,7 @@ class MetaTag
                 'rel' => 'alternate',
                 'hreflang' => $value,
                 'href' => $url
-            ]);
+            ], 'link');
         }
 
         return $html;
@@ -267,9 +277,10 @@ class MetaTag
      * Create meta tag from attributes
      *
      * @param  array $values
+     * @param  string $name
      * @return string
      */
-    private function createTag(array $values)
+    private function createTag(array $values, string $name = 'meta')
     {
         $attributes = array_map(function($key) use ($values) {
             $value = $this->fix($values[$key]);
@@ -278,7 +289,7 @@ class MetaTag
 
         $attributes = implode(' ', $attributes);
 
-        return "<meta {$attributes}>\n    ";
+        return "<{$name} {$attributes}>\n    ";
     }
 
     /**
