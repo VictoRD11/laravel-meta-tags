@@ -1,7 +1,6 @@
 <?php
 
-return array(
-
+return [
     /*
      |--------------------------------------------------------------------------
      | Site default title
@@ -42,7 +41,7 @@ return array(
 
     'open_graph' => [
         'site_name' => 'My Site',
-        'type' => 'website'
+        'type' => 'website',
     ],
 
     /*
@@ -55,7 +54,7 @@ return array(
     'twitter' => [
         'card' => 'summary',
         'creator' => '@mysite',
-        'site' => '@mysite'
+        'site' => '@mysite',
     ],
 
     /*
@@ -75,4 +74,4 @@ return array(
      */
 
     'locales' => ['en', 'es'],
-);
+];
