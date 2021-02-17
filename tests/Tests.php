@@ -1,9 +1,11 @@
 <?php
+
 use Eusonlito\LaravelMeta\Meta;
 
 class Tests extends PHPUnit_Framework_TestCase
 {
     protected static $title;
+
     protected $Meta;
 
     public function setUp()
@@ -13,7 +15,7 @@ class Tests extends PHPUnit_Framework_TestCase
         $this->Meta = new Meta([
             'title_limit' => 70,
             'description_limit' => 200,
-            'image_limit' => 5
+            'image_limit' => 5,
         ]);
     }
 
@@ -61,11 +63,11 @@ class Tests extends PHPUnit_Framework_TestCase
 
         $response = $this->Meta->meta('title', $text = self::text(30));
 
-        $this->assertTrue($text.' - '.self::$title === $response);
+        $this->assertTrue($text . ' - ' . self::$title === $response);
 
         $response = $this->Meta->meta('title', $text = self::text(80));
 
-        $this->assertNotTrue($text.' - '.self::$title === $response);
+        $this->assertNotTrue($text . ' - ' . self::$title === $response);
         $this->assertTrue(strlen($response) === 70);
     }
 
@@ -80,7 +82,7 @@ class Tests extends PHPUnit_Framework_TestCase
         $this->assertTrue($text === $response);
 
         for ($i = 0; $i < 5; $i++) {
-            $response = $this->Meta->meta('image', $text =self::text(80));
+            $response = $this->Meta->meta('image', $text = self::text(80));
 
             if ($i > 2) {
                 $this->assertTrue($response === null);
