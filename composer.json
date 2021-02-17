@@ -30,5 +30,9 @@
     "psr-4": {
       "VictoRD11\\LaravelMetaTags\\": "src/VictoRD11/LaravelMetaTags/"
     }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "check-style": "php-cs-fixer fix src/ --dry-run --diff"
   }
 }
