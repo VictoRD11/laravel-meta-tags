@@ -96,7 +96,7 @@ class MetaTag
      */
     public function get($key, $default = null)
     {
-        return array_get($this->metas, $key, $default);
+        return Arr::get($this->metas, $key, $default);
     }
 
     /**
@@ -187,7 +187,7 @@ class MetaTag
         foreach ($this->og as $tag)
         {
             // Get value for tag, default to dynamically set value
-            $value = array_get($this->config['open_graph'], $tag, $this->get($tag));
+            $value = Arr::get($this->config['open_graph'], $tag, $this->get($tag));
 
             if ($value) {
                 $html[$tag] = $this->createTag([
@@ -225,7 +225,7 @@ class MetaTag
         foreach ($this->twitter as $tag)
         {
             // Get value for tag, default to dynamically set value
-            $value = array_get($this->config['twitter'], $tag, $this->get($tag));
+            $value = Arr::get($this->config['twitter'], $tag, $this->get($tag));
 
             if ($value && !isset($html[$tag])) {
                 $html[$tag] = $this->createTag([
