@@ -34,10 +34,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "VictoRD11\\LaravelMetaTags\\ServiceProvider"
+        "VictoRD11\\LaravelMetaTags\\MetaTagsServiceProvider"
       ],
       "aliases": {
-        "MetaTag": "VictoRD11\\LaravelMetaTags\\Facade"
+        "MetaTag": "VictoRD11\\LaravelMetaTags\\Facades\\MetaTag"
       }
     },
     "hooks": {
