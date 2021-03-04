@@ -18,7 +18,7 @@ class MetaTagsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__ . '/../../config/config.php' => config_path('meta-tags.php'),
@@ -30,7 +30,7 @@ class MetaTagsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         // $this->app['metatag'] = $this->app->share(function ($app) { // Removed to support laravel 5.4
         $this->app->singleton('metatag', function ($app) {
@@ -47,7 +47,7 @@ class MetaTagsServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['metatag'];
     }
