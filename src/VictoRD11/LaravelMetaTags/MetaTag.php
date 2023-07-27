@@ -120,6 +120,23 @@ class MetaTag
     }
 
     /**
+     * @param string $key
+     * @param string $value
+     *
+     * @return string
+     */
+    public function append($key, $value = null)
+    {
+        $method = 'append' . $key;
+
+        if (method_exists($this, $method)) {
+            return $this->$method($value);
+        }
+
+        return $this->metas[$key] = self::cut($this->metas[$key] . $value, $key);
+    }
+
+    /**
      * Create a tag based on the given key.
      *
      * @param string $key
